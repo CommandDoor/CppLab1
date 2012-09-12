@@ -9,6 +9,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include <cardioid.h>
+
 using namespace std;
 
 ///////////////////
@@ -65,15 +67,16 @@ int inputNatural()
 int Menu ()
 {
     int c;
-    cout<<"1.Add new leaf."<<endl;
-    cout<<"2.Delete node."<<endl;
-    cout<<"3.Search node."<<endl;
-    cout<<"4.Import tree."<<endl;
-    cout<<"5.Print tree."<<endl;
-    cout<<"6.Clear tree."<<endl;
-    cout<<"7.Exit."<<endl;
+    cout<<"1.Insert radius."<<endl;
+    cout<<"2.Insert angle."<<endl;
+    cout<<"3."<<endl;
+    cout<<"4."<<endl;
+    cout<<"5.The radius of curvature, depending on the angle."<<endl;
+    cout<<"6.The area bounded by a cardioid."<<endl;
+    cout<<"7.The arc length of the cardioid, depending on the angle of the polar radius."<<endl;
+    cout<<"8.Exit."<<endl;
     input(c);
-    while (c <= 0 || c > 7)
+    while (c <= 0 || c > 8)
     {
         cout<< "Uncorrect! Reenter: ";
         input(c);
@@ -86,8 +89,7 @@ int Menu ()
 ///////////////////
 int main(int argc, char *argv[])
 {
-    Cardioid1 card = new Cardiod1();
-
+    Cardioid* cardioid = new Cardioid();
 
     bool b = true;
     while (b)
@@ -97,18 +99,27 @@ int main(int argc, char *argv[])
 
         switch (c) {
         case 1:
+            cout<<"Insert radius = ";
+            input(cardioid->radius);
             break;
         case 2:
+            cout<<"Insert angle = ";
+            input(cardioid->angle);
             break;
         case 3:
+            cout<<cardioid->angle<<endl;
             break;
         case 4:
             break;
         case 5:
+            cout<<"Radius of curvature = "<<cardioid->getRadiusOfCurvature()<<endl;
             break;
         case 6:
+            cout<<"Area = "<<cardioid->getArea()<<" (square units)"<<endl;
             break;
-        case 7: b = false;
+        case 7:
+            break;
+        case 8: b = false;
             break;
         }
 
