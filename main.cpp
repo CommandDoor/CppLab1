@@ -69,14 +69,9 @@ int Menu ()
     int c;
     cout<<"1.Insert radius."<<endl;
     cout<<"2.Insert angle."<<endl;
-    cout<<"3."<<endl;
-    cout<<"4."<<endl;
-    cout<<"5.The radius of curvature, depending on the angle."<<endl;
-    cout<<"6.The area bounded by a cardioid."<<endl;
-    cout<<"7.The arc length of the cardioid, depending on the angle of the polar radius."<<endl;
-    cout<<"8.Exit."<<endl;
+    cout<<"3.Exit."<<endl;
     input(c);
-    while (c <= 0 || c > 8)
+    while (c <= 0 || c > 3)
     {
         cout<< "Uncorrect! Reenter: ";
         input(c);
@@ -94,7 +89,19 @@ int main(int argc, char *argv[])
     bool b = true;
     while (b)
     {
-        system ("cls");
+        cout<<endl<<"==============================="<<endl;
+        system("cls");
+
+        cout<<"Current results:"<<endl;
+        cout<<" radius = "<<cardioid->radius<<endl;
+        cout<<" angle  = "<<cardioid->angle<<endl;
+        cout<<"3)"<<endl;
+        cout<<"4)"<<endl;
+        cout<<"5) Radius of curvature = "<<cardioid->getRadiusOfCurvature()<<endl;
+        cout<<"6) Area = "<<cardioid->getArea()<<" (square units)"<<endl;
+        cout<<"7)"<<endl;
+        cout<<"---------"<<endl<<endl;
+
         int c = Menu();
 
         switch (c) {
@@ -106,22 +113,10 @@ int main(int argc, char *argv[])
             cout<<"Insert angle = ";
             input(cardioid->angle);
             break;
-        case 3:
-            cout<<cardioid->angle<<endl;
-            break;
-        case 4:
-            break;
-        case 5:
-            cout<<"Radius of curvature = "<<cardioid->getRadiusOfCurvature()<<endl;
-            break;
-        case 6:
-            cout<<"Area = "<<cardioid->getArea()<<" (square units)"<<endl;
-            break;
-        case 7:
-            break;
-        case 8: b = false;
+        case 3: b = false;
             break;
         }
+
 
         if (b)
         {

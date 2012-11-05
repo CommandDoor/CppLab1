@@ -8,14 +8,12 @@ class Cardioid
 public:
     Cardioid();
 
-    const static double PI = 3.14159;
-
     int radius;
     int angle;
 
-    int getArea() { return 6 * PI * radius * radius; }
+    int getArea() { return 6 * M_PI * radius * radius; }
 
-    float getRadiusOfCurvature() { return 8/3 * radius * sin(angle/2); }
+    double getRadiusOfCurvature() { return 8.0/3.0 * radius * sin(angle/2*M_PI/180); }
 
 };
 
