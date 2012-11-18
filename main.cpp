@@ -97,8 +97,8 @@ int main(int argc, char *argv[])
         cout<<" angle  = "<<cardioid->angle<<endl;
         cout<<"3)"<<endl;
         cout<<"4)"<<endl;
-        cout<<"5) Radius of curvature = "<<cardioid->getRadiusOfCurvature()<<endl;
-        cout<<"6) Area = "<<cardioid->getArea()<<" (square units)"<<endl;
+        cout<<"5) Radius of curvature ( 8/3 * "<<cardioid->radius<<" * sin("<<cardioid->angle<<"*Pi/360) ) = "<<cardioid->getRadiusOfCurvature()<<endl;
+        cout<<"6) Area ( 6 * Pi * "<<cardioid->radius<<"^2 ) = "<<cardioid->getArea()<<" (square units)"<<endl;
         cout<<"7)"<<endl;
         cout<<"---------"<<endl<<endl;
 
